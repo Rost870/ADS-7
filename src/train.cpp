@@ -23,16 +23,12 @@ void Train::addCar(bool light) {
   } else {
     Car* last = first->prev;
     last->next = car;
-    car->prev  = last;
-    car->next  = first;
+    car->prev = last;
+    car->next = first;
     first->prev = car;
   }
 }
 
-// Алгоритм: два полных обхода кольца.
-// Первый — инвертируем лампочки в каждом вагоне.
-// Второй — возвращаем состояния обратно.
-// countOp = 2 * n независимо от начального состояния лампочек.
 int Train::getLength() {
   if (!first) return 0;
   countOp = 0;
