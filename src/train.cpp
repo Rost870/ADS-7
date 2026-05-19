@@ -41,7 +41,7 @@ int Train::getLength() {
   int n = 0;
   int k = 0;
   const Car* start = first;
-  Car* cur = first;
+  const Car* cur = first;
   do {
     n++;
     if (cur->light) k++;
